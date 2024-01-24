@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { Title } from './components/Title'
+import { RedButton } from './components/RedButton'
+import { BlueButton } from './components/BlueButton'
+import { useState } from "react";
+
 
 function App() {
+  const [titleColor, setTitleColor] = useState('black');
+
+  const changeColorToBlue = () => {
+    setTitleColor('blue');
+  };
+
+  const changeColorToRed = () => {
+    setTitleColor('red');
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title titleColor={titleColor}/>
+      <RedButton handleClick={changeColorToRed}/>
+      <br/>
+      <BlueButton handleClick={changeColorToBlue}/>
     </div>
   );
 }
