@@ -9,7 +9,7 @@ test('renders title in black by default', () => {
 });
 
 
-test('renders title in red when red button is clicked', async () => {
+test('renders title in red when the user clicks the red button', async () => {
   const user = userEvent.setup();
 
   // Given
@@ -24,7 +24,7 @@ test('renders title in red when red button is clicked', async () => {
   expect(titleElement.style.color).toBe('red');
 });
 
-test('renders title in red when blue button is clicked', async () => {
+test('renders title in blue when the user clicks the blue button', async () => {
   const user = userEvent.setup();
 
   // Given
