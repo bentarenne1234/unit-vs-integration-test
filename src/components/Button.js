@@ -1,7 +1,7 @@
 export function Button(props) {
   return (
     <div>
-      <button onClick={props.handleClick}> Click me {props.buttonTitle}! </button>
+      <button onClick={props.handleClick}> Click me {props.buttonText}! </button>
     </div>
   );
 }
