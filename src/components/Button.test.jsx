@@ -20,14 +20,14 @@ test('renders the button text when the color text prop is provided', () => {
 });
 
 test('invokes handleClick function when the user clicks on the button', async() => {
-  const user = userEvent.setup();
+  const user = userEvent.setup();  // https://testing-library.com/docs/dom-testing-library/api-events/
   const handleClick = () => console.log("It has clicked!");
   render(<Button buttonText='yellow' handleClick={handleClick}/>);
   const button = screen.getByRole('button', { name: 'Click me yellow!' });
   await user.click(button);
   //expect(handleClick).toHaveBeenCalledTimes(1);
-
 });
+
 test('invokes handleClick (with mocked) function when the user clicks on the button', async() => {  
   const user = userEvent.setup();
   const mockedHandleClick = jest.fn();
