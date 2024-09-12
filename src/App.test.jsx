@@ -42,5 +42,24 @@ describe('App component', () => {
     const titleElement = screen.getByRole('heading', { level: 1 });
     expect(titleElement.style.color).toBe('blue');
   });
+
+  test('renders title in black and then should render the title in blue when clicking ' +
+    'blue button and then should put the title in red when clicking the red button', async () => {
+      render(<App />);
+      const titleElement = screen.getByRole('heading', { level: 1 });
+      expect(titleElement.style.color).toBe('black');
+
+      const blueButton = screen.getByRole('button', { name: 'Click me blue!' })
+
+      await user.click(blueButton)
+
+      expect(titleElement.style.color).toBe('blue');
+
+      const redButton = screen.getByRole('button', { name: 'Click me red!' })
+
+      await user.click(redButton)
+
+      expect(titleElement.style.color).toBe('red');
+    });
 });
 
